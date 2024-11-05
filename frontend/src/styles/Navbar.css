@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    text-align: center;
+    scroll-behavior: smooth;
+    font-size: 1rem;
+    background-color: #EEF8D3; /* Light army green background */
+}
+    /* Other styles remain unchanged */
+
+
+.logo{
+    width: 150px;
+    height: auto;
+    max-height: 60px;
+}
+/* Navigation bar styling */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    /* padding: 15px 0;
+    width: 100%;
+    position: static;
+    top: 0;
+    z-index: 1000; */
+}
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navbar a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: green;
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.4s, background-color 0.3s;
+    border-radius: 5px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: green;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.navbar a.signup {
+    background-color: green;
+    color: #fff;
+}
+.navbar a:hover {
+    background-color: #555;
+    transform: rotateY(360deg);
+}
+
+/* Search bar styling */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+.search-bar input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 180px;
+}
+.search-bar button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s;
+}
+.search-bar button:hover {
+    background-color: #555;
+}
