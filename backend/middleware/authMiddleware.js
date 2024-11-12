@@ -7,7 +7,7 @@ const protect = asyncHandler(async (req, res, next) => {
 
   token = req.cookies.jwt;
 
-  if (token) {
+  if (!token) {
     try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
@@ -15,7 +15,7 @@ const protect = asyncHandler(async (req, res, next) => {
 
       next();
     } catch (error) {
-      console.error(error);
+      console.error(error); 
       res.status(401);
       throw new Error('Not authorized, token failed');
     }

@@ -1,4 +1,14 @@
-*{
-    font-size: 1rem;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-size: 1rem; */
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    /* overflow-x: hidden; */
+
+}
+a{
+    white-space: nowrap; 
+    /* overflow: hidden;  */
+    /* text-overflow: ellipsis; */
 }

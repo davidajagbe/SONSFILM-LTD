@@ -1,0 +1,11 @@
+/* MainLayout.css */
+body.menu-open {
+  padding-top: 250px; /* Adjust as needed based on navbar height */
+}
+  
+@media (min-width: 769px) {
+  body.menu-open {
+    padding-top: 0; /* Ensure padding is removed on desktop view */
+  }
+}
+  

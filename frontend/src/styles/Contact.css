@@ -1,26 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #333;
+/* Contact Us section */
+.main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 50px 0;
+    background-color: #f9fdf3;
 }
 
-  /* Main container for the page content */
-.main-container {
-    width: 100%;
-    max-width: 1200px;
-    padding: 40px;
-}
-
-  /* Contact Form Section */
 .contact-form-container {
     background-color: #fff;
     text-align: center;
@@ -46,6 +32,7 @@ body {
 }
 
 .form-row {
+    width: 30em;
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
@@ -73,57 +60,113 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 2s ease;
 }
 
 button:hover {
     background-color: #78a958;
 }
 
-  /* Footer Section */
-.footer {
-    width: 100%;
-    background-color: #e9f5d7; /* Light green background for footer */
+/* Map Location Section */
+.location-section {
+    background-color: #eef8d3;
     padding: 40px 20px;
-    padding-left: 300px; /* Increased left padding to push text further right */
-    text-align: left;
+    text-align: center;
 }
 
-.footer h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
+.location-section h1 {
+    font-size: 1.8rem;
+    color: #4d6041;
+    margin-bottom: 15px;
 }
 
-.footer .subtitle {
-    font-size: 1.1em;
-    color: #555;
+.location-section .subtitle {
+    color: #666;
     margin-bottom: 30px;
 }
 
 .locations {
     display: flex;
-    flex-direction: column;
     gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.location {
+    background-color: #f5fcef;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    opacity: 0; /* Start with opacity 0 for animation */
+    transform: translateY(20px);
+    transition: opacity 2s ease, transform 2s ease;
 }
 
 .location h2 {
-    font-size: 1.5em;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: #4d6041;
 }
 
 .location p {
-    font-size: 1em;
     color: #666;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 .location a {
-    font-size: 1em;
-    color: #333;
+    color: #4d6041;
     text-decoration: none;
     font-weight: bold;
 }
 
 .location a:hover {
     text-decoration: underline;
+}
+
+/* Animation for locations */
+.location.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* testimonial Section */
+.testimonials-container {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.testimonial-card {
+  width: 30%;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.green-light {
+  background-color: #a8c080; /* Bright light army green */
+}
+
+.green-medium {
+  background-color: #6e8f4f; /* Medium shade army green */
+}
+
+.green-dark {
+  background-color: #4b6337; /* Darker shade army green */
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons i {
+  margin: 0 5px;
+  font-size: 18px;
+  color: #fff;
 }

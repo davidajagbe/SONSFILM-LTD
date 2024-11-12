@@ -1,9 +1,6 @@
 import AsyncHandler from "express-async-handler";
 import User from "../Model/UserModel.js";
 import CookieToken from "../utils/CookieToken.js";
-
-
-
 // @desc        Auth User/ser token
 //              POST api/users/auth
 // @access      public
@@ -31,7 +28,7 @@ const authUser = AsyncHandler(async (req, res) => {
   // @route   POST /api/users
   // @access  Public
   const registerUser = AsyncHandler(async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password,confirmPassword } = req.body;
   
     const userExists = await User.findOne({ email });
   
@@ -44,6 +41,7 @@ const authUser = AsyncHandler(async (req, res) => {
       name,
       email,
       password,
+      confirmPassword
     });
   
     if (user) {
@@ -63,7 +61,7 @@ const authUser = AsyncHandler(async (req, res) => {
   // @desc    Logout user / clear cookie
   // @route   POST /api/users/logout
   // @access  Public
-  const logoutUser = AsyncHandler((req, res) => {
+  const logout = AsyncHandler((req, res) => {
     res.cookie('jwt', '', {
       httpOnly: true,
       expires: new Date(0),
@@ -118,4 +116,4 @@ const authUser = AsyncHandler(async (req, res) => {
     }
   });
 
-export {authUser, registerUser, logoutUser, getUserProfile, updateUserProfile};
+export {authUser, registerUser, logout, getUserProfile, updateUserProfile};

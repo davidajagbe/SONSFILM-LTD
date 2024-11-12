@@ -1,0 +1,21 @@
+.gallery-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+@media (max-width:1024px) {
+    .gallery-container{
+        max-width: 800px;
+    }
+}
+@media (max-width:480px) {
+    .gallery-container{
+        max-width: 450px;
+    }
+}

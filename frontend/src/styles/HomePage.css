@@ -1,125 +1,12 @@
 
-/* Main sections styling */
-section {
-    padding: 70px 20px;
-    margin: 20px 0;
-}
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-.button-container a {
-    background-color: green;
-    color: white;
-    padding: 12px 24px;
-    margin: 0 30px;
-    font-size: 18px;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s;
-}
-.button-container a:hover {
-    background-color: #555;
-}
-.services-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
 
-.service-card, .mission-block {
-    background-color: #20B2A6; 
-    color: black; /* Text color for better contrast on green background */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    padding: 20px;
-    text-align: left;
-    margin: 10px;
+.h2{
+    margin-top: 30px;
 }
-.service-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-.service-card h3, .mission-block h3 {
-    color: black;
-    font-size: 18px;
-    margin: 10px 0;
-}
-.faq-section h2, .faq-item h3 {
-    color: black;
-}
-.faq-item {
-    text-align: left;
-    margin: 10px 0;
-    cursor: pointer;
-}
-.faq-item.active p {
-    display: block;
-}
-
-/* Mission container styling */
-.mission-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-/* Footer styling for horizontal alignment */
-.footer {
-    background-color: #4B5320;
-    color: white;
-    padding: 40px;
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
-    text-align: left;
-}
-.footer div {
-    margin: 10px;
-    width: 200px;
-}
-.footer .contact-form input[type="text"], .footer .contact-form input[type="email"], .footer .contact-form input[type="tel"] {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 5px;
-}
-.footer .contact-form input[type="submit"] {
-    width: 100%;
-    padding: 8px;
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.footer .links a, .footer .social-media a {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin: 5px 0;
-}
-.footer-bottom {
-    background-color: #3E4A21;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-}
-
 .faq-container {
-    max-width: 800px;
+    max-width: 600px;
     margin: auto;
+    margin-bottom: 10px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -128,23 +15,51 @@ section {
 
 .faq {
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    /* border-radius: 5px; */
 }
 
 .faq-question {
-    padding: 15px;
-    background-color: #f9f9f9;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  padding: 15px;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
 }
 
 .faq-question:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.up {
+  transform: rotate(180deg);
 }
 
 .faq-answer {
-    padding: 15px;
-    display: none; /* Hidden by default */
-    border-top: 1px solid #ccc;
+  padding: 15px;
+  display: block;
+  /* border-top: 1px solid #ccc; */
+}
+
+.about-image img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }

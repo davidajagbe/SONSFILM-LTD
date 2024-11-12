@@ -1,18 +1,19 @@
 /* Body styling */
 body {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     background-color: #e0f7e9;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0;
 }
 
 /* Container styling */
 .profile-container {
     background-color: rgba(224, 247, 233, 0.8);
-    width: 400px;
+    max-width: 500px;
+    margin: 50px auto;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);

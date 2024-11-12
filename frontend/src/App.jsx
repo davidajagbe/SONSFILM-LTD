@@ -1,19 +1,45 @@
-import React from 'react'
-import { createBrowserRouter,createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, RouterProvider,Route } from 'react-router-dom';
 import MainLayout from './Layout/MainLayout';
 import Home from './Pages/HomePage';
+import LoginPage from './Pages/LoginPage';
+import SigupPage from './Pages/SigupPage';
+import Contact from './Pages/Contact';
+import Gallery from './Pages/Gallery';
+import AboutUs from './Pages/AboutUs';
+import Fees from './Pages/Fees';
+import Profile from './Pages/Profile';
+import UpdateProfile from './Components/UpdateProfile';
+import ProtectedRoute from './Components/ProtectedRoutes';
+import { AuthProvider } from './Context/AuthProvider';
+import NotFoundPage from './Components/NotFoundPage';
+import NotificationPage from './Components/Notification';
+import MoviePremiereForm from './Components/MoviePremiereForm';
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />} >
         <Route index element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/event" element={<Gallery />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SigupPage />} />
+        <Route path="user/fees" element={<Fees />} />
+        <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+        <Route path="/editprofile" element={<ProtectedRoute><UpdateProfile /></ProtectedRoute>} />
+        <Route path="/notifications" element={<ProtectedRoute><NotificationPage /></ProtectedRoute>} />
+        <Route path="/moviepremiereform" element={<MoviePremiereForm />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     )
   );
+
   return (
-    <RouterProvider router={router} />
-  )
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;
