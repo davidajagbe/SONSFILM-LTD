@@ -50,7 +50,31 @@ function Fees() {
         <p><strong>Email:</strong> {user?.email}</p>
         <p><strong>Address:</strong> {user?.address}</p>
       </div>
+      <div className="instructions">
+        <p>STEP 1:</p>
+        <p>PAY IN THE SUM OF SIXTY THOUSAND FIVE HUNDRED NAIRE (#60, 500 ) INTO OUR ACCOUNT</p>
+        <p>ACCOUNT NAME : STARS OF NIGERIA FILMS ENTERTAINMENT LIMITED</p>
+        <p>ACCOUNT NUMBER : 3800093365</p>
+        <p>BANK :  ECO BANK</p>
+        <p>OR</p>
+        <p>YOU CAN ALSO PAY INTO THE COMPANY US DOLLAR ACCOUNT, FOR THOSE OF YOU LIVING ABROAD</p>
+        <p>ACCOUNT NAME : STARS OF NIGERIA FILMS ENTERTAINMENT</p>
+        <p>ACCOUNT NUMBER : 3800094544</p>
+        <p>BANK NAME : ECO BANK</p>
+        <hr />
+        <p>STEP 2:</p>
+        <p>SEND THE PAYMENT TELLER TO US VIA EMAIL : PAYMENT@Starsofnigeriafilmsentertainment.com</p>
+        <p>STEP 3</p>
+        <p>A PASSWORD WILL BE SEND TO YOU VIA EMAIL.</p>
+        <p>STEP 4:</p>
+        <p>GO TO FORM SECTION, CLICK ON FORM, CLICK ON ARTIST MEMBERSHIP FORM  OR ANY OTHER FORM YOU WISH TO REGISTER .</p>
+        <p>STEP 5:</p>
+        <p>GO TO FORM SECTION, CLICK ON FORM, CLICK ON ARTIST MEMBERSHIP FORM  OR ANY OTHER FORM YOU WISH TO REGISTER .</p>
+        <p>STEP 6:</p>
+        <p>GO TO FORM SECTION, CLICK ON FORM, CLICK ON ARTIST MEMBERSHIP FORM  OR ANY OTHER FORM YOU WISH TO REGISTER .</p>
 
+        <p>NOTE : THIS PROCESS APPLIES TO ALL STARS OF NIGERIA FILMS ENTERTAINMENT REGISTRATIONS  </p>
+      </div>
       <form>
         <label htmlFor="cardholder-name">Cardholder Name</label>
         <input type="text" id="cardholder-name" name="cardholder-name" required />

@@ -136,7 +136,7 @@ body {
     flex-wrap: wrap;
 }
 
-.card, .project-list, .achievements-list {
+.card, .form-list, .achievements-list {
     background-color: white;
     padding: 20px;
     border-radius: 8px;

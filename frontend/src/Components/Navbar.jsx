@@ -33,12 +33,11 @@ const Navbar = ({toggleMenu, menuOpen}) => {
             <NavLink to="/about">About Us</NavLink>
             <div className="dropdown-content">
               <NavLink to="/about#services">Our Services</NavLink>
-              <NavLink to="/about#team">Our Team</NavLink>
               <NavLink to="/about#pricing">Pricing</NavLink>
               <NavLink to="/#faqs">FAQs</NavLink>
             </div>
           </div>
-          <NavLink to="/event">Event</NavLink>
+          <NavLink to="/events">Event</NavLink>
           <div className="dropdown">
             <NavLink to="/contact">Contact</NavLink>
             <div className="dropdown-content">

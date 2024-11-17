@@ -1,7 +1,7 @@
 import Hero from '../Components/Hero';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import homeImage from '../assets/IMG-20241022-WA0010.jpg'
+import homeImage from '../assets/IMG-20241022-WA0001.jpg'
 import '../styles/HomePage.css';
 
 const HomePage = () => {

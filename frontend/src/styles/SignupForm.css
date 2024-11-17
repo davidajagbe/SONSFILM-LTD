@@ -33,7 +33,8 @@ label {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"]
+input[type="date"] {
     width: 100%;
     padding: 0.8em;
     margin-top: 0.5em;
@@ -70,7 +71,7 @@ input[type="password"] {
 button[type="submit"] {
     width: 100%;
     padding: 0.8em;
-    background-color: #4d6041;
+    /* background-color: #4d6041; */
     color: #fff;
     font-size: 1rem;
     font-weight: bold;

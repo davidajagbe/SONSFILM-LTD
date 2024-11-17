@@ -3,7 +3,7 @@ body {
     text-align: center;
     scroll-behavior: smooth;
     /* font-size: 1rem; */
-    background-color: #EEF8D3;
+    background-color: transparent;
 }
 
 /* Navbar Component for user's Logged out */

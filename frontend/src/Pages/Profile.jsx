@@ -25,7 +25,7 @@ function Profile() {
             <hr />
             <div className="sidebar-links">
               <a href="#overview">Overview</a>
-              <a href="#projects">Projects</a>
+              <a href="#forms">forms</a>
               <a href="#skills">Skills</a>
               <a href="#achievements">Achievements</a>
             </div>
@@ -33,7 +33,7 @@ function Profile() {
         ) : (
           <div className="icon-links">
             <a href="#overview" title="Overview">🏠</a>
-            <a href="#projects" title="Projects">🎬</a>
+            <a href="#forms" title="forms">🎬</a>
             <a href="#skills" title="Skills">💼</a>
             <a href="#achievements" title="Achievements">🏆</a>
           </div>
@@ -53,22 +53,22 @@ function Profile() {
           <p>{user?.overview || 'Welcome to the profile page. Discover our journey and achievements.'}</p>
         </section>
         <section className='form'>
-          <div className="form-container">
-            <div className="crew-form"></div>
-            <div className="scripti_printing-form"></div>
-            <div className="camping-form"></div>
-            <div className="membership-form"></div>
-            <div className="welfare-form"></div>
-            <div className="moviePremiere-form"></div>
-          </div>
+          {/* <div className="form-container">
+            <li className="crew-form"></li>
+            <li className="scripti_printing-form"></li>
+            <li className="camping-form"></li>
+            <li className="membership-form"></li>
+            <li className="welfare-form"></li>
+            <li className="moviePremiere-form"></li>
+          </div> */}
         </section>
-        <section id="projects" className="section">
-          <h2>Projects</h2>
-          <div className="project-list">
+        <section id="forms" className="section">
+          <h2>Forms</h2>
+          <div className="form-list">
             <ul>
-              {user?.projects?.map((project, index) => (
-                <li key={index}>{project.name} - {project.status}</li>
-              )) || <li style={{listStyle:'none'}}>No projects available</li>}
+              {user?.forms?.map((form, index) => (
+                <li key={index}>{form.name} - {form.status}</li>
+              )) || <li style={{listStyle:'none'}}>No Forms available</li>}
             </ul>
           </div>
         </section>

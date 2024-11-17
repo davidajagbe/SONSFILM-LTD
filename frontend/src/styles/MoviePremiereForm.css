@@ -1,40 +1,18 @@
 /* Container styling */
 
-/* .form-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
-    background-color: #f5f9f2;
-}*/
 .premiere-form-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 } 
 
-.premiere-form-container h2 {
-  text-align: center;
-  color: #333;
-}
-
 /* Form styling */
-/* form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #555;
-}
-*/
+/* Inherited form styling */
 .premiere-form-container input, select, textarea {
   padding: 10px;
   margin-bottom: 15px;
@@ -48,19 +26,4 @@ textarea {
   resize: vertical;
 }
 
-/* Button styling */
-/* button {
-  background-color: #1e90ff;
-  color: white;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-} */
-
-button:hover {
-  background-color: #1c86e0;
-}
     

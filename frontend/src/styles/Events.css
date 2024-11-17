@@ -10,12 +10,12 @@
   border-radius: 10px;
 }
 @media (max-width:1024px) {
-    .gallery-container{
-        max-width: 800px;
-    }
+  .gallery-container{
+    max-width: 800px;
+  }
 }
 @media (max-width:480px) {
-    .gallery-container{
-        max-width: 450px;
-    }
+  .gallery-container{
+    max-width: 450px;
+  }
 }
