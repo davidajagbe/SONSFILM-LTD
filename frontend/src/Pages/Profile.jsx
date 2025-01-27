@@ -5,7 +5,8 @@ import '../styles/Profile.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Edit } from '@mui/icons-material'; // Import icons from Material UI
+import { Edit } from '@mui/icons-material'; // Import icons from Material UI 
+
 // import { FaUserCircle } from 'react-icons/fa';
 // import Advert from '../Components/Advert';
 import profilePicc from '/Users/DELL/Documents/MERNSTACK (2)/MERNSTACK/backend/uploads/1735567987649-sunny_empire_image-removebg-preview.png';
