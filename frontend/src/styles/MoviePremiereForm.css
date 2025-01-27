@@ -1,0 +1,29 @@
+/* Container styling */
+
+.premiere-form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} 
+
+/* Form styling */
+/* Inherited form styling */
+.premiere-form-container input, select, textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+    

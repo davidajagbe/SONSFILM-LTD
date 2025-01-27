@@ -1,0 +1,31 @@
+.notification-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.notification-page h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.notification-item {
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.notification-item.successful {
+  background-color: #e0f5e0;
+  color: #228b22;
+}
+
+.notification-item.pending {
+  background-color: #fff8e1;
+  color: #ff9800;
+}
+
+.notification-item.failed {
+  background-color: #fbe9e9;
+  color: #e53935;
+}

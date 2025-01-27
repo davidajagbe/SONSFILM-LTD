@@ -1,0 +1,105 @@
+/* Footer Container */
+.footer {
+    background-color: #4B5320;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: left;
+    gap: 20px;
+}
+
+.footer div {
+    margin: 10px;
+    min-width: 150px;
+    max-width: 200px;
+}
+
+/* Headings Styling */
+.footer h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Contact Form */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-form input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Links and Social Media */
+.links {
+    padding-left: 0;
+}
+
+.links .a,
+.social-media .a {
+    list-style-type: none; /* Removes the bullets */
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    background-color: #3E4A21;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+}
+
+/* Contact Info */
+.contact-info .mail-link {
+    white-space: nowrap;
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info .mail-link:hover {
+    text-decoration: underline;
+}
+.icon {
+    color: white; /* yellow-400 */
+    font-size: 50px; /* equivalent to text-6xl */
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer div {
+        max-width: 100%;
+        text-align: center;
+    }
+    .footer-bottom {
+        font-size: 12px;
+    }
+}

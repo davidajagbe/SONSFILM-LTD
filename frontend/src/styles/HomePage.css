@@ -1,0 +1,79 @@
+
+
+.h2{
+  margin-top: 30px;
+}
+.faq-container {
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faq {
+  margin: 10px 0;
+  border: none;
+  /* border-radius: 5px; */
+}
+
+.faq-question {
+  padding: 15px;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+  background-color: #f1f1f1;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.up {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 15px;
+  display: block;
+  /* border-top: 1px solid #ccc; */
+}
+
+.about-image img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.ads-section {
+  display: flex;
+  flex-wrap: wrap; /* Allow ads to wrap onto multiple lines */
+  justify-content: center;
+  gap: 20px;
+}
+
+.ads-section .advert-image {
+  max-width: 300px; /* Adjust width as needed */
+  height: auto;
+  border: 1px solid #ddd; /* Add a subtle border */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+@media (max-width: 768px) {
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

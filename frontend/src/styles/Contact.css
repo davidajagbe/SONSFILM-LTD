@@ -1,0 +1,176 @@
+/* Contact Us section */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    background-color: #f5ffe9;
+}
+
+.contact-form-container {
+    background-color: #fff;
+    text-align: center;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.contact-form-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.contact-form-container p {
+    margin-bottom: 30px;
+    color: #555;
+    font-size: 1.1em;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    width: 30em;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-row input, .form-row select {
+    flex: 1;
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f5ffe9;
+    color: #333;
+}
+
+input::placeholder, select {
+    color: #666;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.1em;
+    background-color: #89c16a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 2s ease;
+}
+
+button:hover {
+    background-color: #78a958;
+}
+
+/* Map Location Section */
+.location-section {
+    background-color: #f5ffe9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.location-section h1 {
+    font-size: 1.8rem;
+    color: #4d6041;
+    margin-bottom: 15px;
+}
+
+.location-section .subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.locations {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.location {
+    background-color: #f5fcef;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    opacity: 0; /* Start with opacity 0 for animation */
+    transform: translateY(20px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.location h2 {
+    font-size: 1.2rem;
+    color: #4d6041;
+}
+
+.location p {
+    color: #666;
+    margin: 10px 0;
+    transition: opacity 0.5s ease-out; /* Add a transition for opacity */
+}
+
+.location a {
+    color: #4d6041;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.location a:hover {
+    text-decoration: underline;
+}
+
+/* Animation for locations */
+.location.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.location.visible p {
+    opacity: 1; /* Ensure full opacity when visible */
+}
+/* testimonial Section */
+.testimonials-container {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.testimonial-card {
+  width: 30%;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.green-light {
+  background-color: #a8c080; /* Bright light army green */
+}
+
+.green-medium {
+  background-color: #6e8f4f; /* Medium shade army green */
+}
+
+.green-dark {
+  background-color: #4b6337; /* Darker shade army green */
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons i {
+  margin: 0 5px;
+  font-size: 18px;
+  color: #fff;
+}

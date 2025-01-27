@@ -1,0 +1,312 @@
+/* General Styles */
+body {
+    margin: 0;
+    background-color: #f5ffe9;
+}
+.profile {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100vh;
+    transition: width 0.3s;
+    overflow: hidden;
+}
+.sidebar.expanded {
+    width: 250px;
+}
+.sidebar.collapsed {
+    width: 70px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.icon-links a {
+    display: block;
+    font-size: 24px;
+    margin: 15px 0;
+    color: black;
+    text-align: center;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.sidebar.collapsed .toggle-btn{
+    color: white;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin: 10px 0;
+}
+.sidebar.collapsed .toggle-btn:hover{
+    background-color: #4B5320;
+    color: white;
+}
+
+/* Sidebar Links */
+.sidebar h2, .sidebar .profile-info h3, .sidebar .profile-info p {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.sidebar-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+.sidebar-links a:hover {
+    background-color: #4CAF50;
+}
+
+.profile-info {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #4CAF50;
+    margin-bottom: 10px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.edit-profile-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.personal-info p {
+    margin: 5px 0;
+}
+
+.personal-info h3 {
+    margin-bottom: 10px;
+}
+
+.section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.main-content .forms{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Cards */
+.overview-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card, .form-list, .achievements-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Form section */
+.forms-section {
+  padding: 20px;
+}
+
+.forms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.form-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.form-card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.form-btn {
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.form-btn.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.form-btn:hover:not(.disabled) {
+  background-color: #45a049;
+}
+
+/* Advert section */
+
+/* Advert Modal section */
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content .ad-preview {
+    max-width: 100%; /* Ensure the image doesn't overflow the modal */
+    height: auto;   /* Maintain aspect ratio */
+}
+
+/* Profile.css */
+.profile .ad-image {
+    max-width: 500px; /* Adjust the width as needed */
+    height: auto;     /* Maintain aspect ratio */
+}
+
+.close-btn {
+    color: rgb(222, 34, 34);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: rgb(246, 10, 10);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media(max-width:1024px){
+    .sidebar-links a{
+        justify-content: center;
+        align-items: center;
+        margin-left: -10px;
+        font-size: 10px;
+    }
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar.expanded {
+        width: 100px;
+    }
+    .main-content {
+        padding: 15px;
+    }
+    .header h1 {
+        font-size: 20px;
+    }
+    .edit-profile-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .section {
+        padding: 15px;
+    }
+    .overview-cards {
+        flex-direction: column;
+    }
+    .card {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
