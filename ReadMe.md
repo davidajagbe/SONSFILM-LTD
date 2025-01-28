@@ -34,6 +34,7 @@ The site features a clean and modern ✨ design, using a 🪖 lightened army gre
   - 🔒 bcrypt for password hashing
 - **Other Tools:**
   - 📧 Nodemailer for email verification and notifications
+  - Animate.css for the tada effect on the notification icon
 
 ---
 

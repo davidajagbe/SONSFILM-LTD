@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { useContext, useEffect,useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { AuthContext } from '../Context/AuthContext';
 import Navbar from '../Components/Navbar';
@@ -15,15 +15,19 @@ const MainLayout = () => {
   };
 
   useEffect(() => {
-    // Manage 'menu-open' padding on mobile screens
     if (menuOpen && window.innerWidth < 769) {
       document.body.classList.add('menu-open');
+      const navbar = document.querySelector('.navbar'); 
+      if (navbar) { 
+        document.body.style.paddingBottom = `${navbar.offsetHeight}px`; 
+      }
     } else {
       document.body.classList.remove('menu-open');
+      document.body.style.paddingTop = '0px'; 
     }
   }, [menuOpen]);
 
-  const { error,success } = useContext(AuthContext);
+  const { error, success } = useContext(AuthContext);
 
   useEffect(() => {
     if (error) {
@@ -39,6 +43,7 @@ const MainLayout = () => {
       if (window.innerWidth >= 769) {
         setMenuOpen(false); // Close the menu and reset padding in desktop view
         document.body.classList.remove('menu-open');
+        document.body.style.paddingTop = '0px';
       }
     };
 
@@ -49,7 +54,7 @@ const MainLayout = () => {
   return (
     <>
       <Navbar toggleMenu={toggleMenu} menuOpen={menuOpen} />
-      <main style={{ minHeight: '80vh' }}>
+      <main className='container' style={{ minHeight: '80vh' }}>
         <Outlet />
       </main>
       <Footer />

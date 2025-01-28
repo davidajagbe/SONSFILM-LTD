@@ -458,15 +458,19 @@ const authUser = AsyncHandler(async (req, res) => {
       user.title = title || user.title;
       user.address = address || user.address;
 
+      //update current password
+      if (req.body.password) {
+        user.password = req.body.password;
+      }
+
       // If a file is uploaded, update the profile picture
       const files = req.file;
       if (!files) {
         res.status(400);
         throw new Error("Please select a file to upload.");
       }
-      if(files){
-        user.profilePic = files.path; // Save the filename
-      }
+
+      user.profilePic = files.path; // Save the filename
       
       // user.profilePic = files.path;  
       // user.ad.imageUrl = files.path;

@@ -112,14 +112,25 @@ body {
     color: #333;
 }
 
+.header-buttons {
+    display: flex; /* Use flexbox for horizontal layout */
+    gap: 1rem; /* Add some space between buttons */ 
+}
+
 .edit-profile-btn {
     background-color: #4CAF50;
     color: white;
+    border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.edit-profile-btn:hover {
+    background-color: #45a049;
 }
 .personal-info {
     display: flex;

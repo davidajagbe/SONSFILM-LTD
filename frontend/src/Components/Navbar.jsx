@@ -4,6 +4,7 @@ import logo from '../assets/SONSFILM_ENT_LOGO-removebg-preview.png';
 import { FaBell, FaUserCircle } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
+import 'animate.css';
 
 // eslint-disable-next-line react/prop-types
 const Navbar = ({toggleMenu, menuOpen}) => {
@@ -37,9 +38,9 @@ const Navbar = ({toggleMenu, menuOpen}) => {
         <div className={`navbar ${menuOpen ? 'active' : ''}`}>
           {user ? (
             <>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/" className="navlinks">Home</NavLink>
               <div className="dropdown">
-                <NavLink to="/about">About Us</NavLink>
+                <NavLink to="/about" className="navlinks">About Us</NavLink>
                 <div className="dropdown-content">
                   <NavLink to="/about#services">Our Services</NavLink>
                   <NavLink to="/about#pricing">Pricing</NavLink>
@@ -47,16 +48,17 @@ const Navbar = ({toggleMenu, menuOpen}) => {
                 </div>
               </div>
               <div className="dropdown">
-                <NavLink to="/contact">Contact</NavLink>
+                <NavLink to="/contact" className="navlinks">Contact</NavLink>
                 <div className="dropdown-content">
                   <NavLink to="/contact#contact-us">Contact Us</NavLink>
                   <NavLink to="/contact#testimonials">Testimonials</NavLink>
                   <NavLink to="/contact#location">Map Location</NavLink>
                 </div>
               </div>
-              <NavLink to="/events">Event</NavLink>
+              <NavLink to="/events" className="navlinks">Event</NavLink>
               {/* User's Profile */}
               <NavLink to="/notifications" className="notification-icon" alt='notifications'>
+                
                 <FaBell size={20} />
               </NavLink>
               <NavLink to="/profile" className="profile-link">

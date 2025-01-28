@@ -40,8 +40,10 @@ router.route('/logout').post(logout);
 router.post('/contact', sendContactForm); 
 
 // Profile (requires authentication)
-router.route('/profile').get(protect, getUserProfile).put(upload.single('profilePic'),upload.single('imageUrl'),updateUserProfile).delete(terminateAccount);
-  
+router.route('/profile').get(protect, getUserProfile).put(upload.single('profilePic'),upload.single('imageUrl'),updateUserProfile);
+
+//terminate user account
+router.route('/terminate').delete(protect, terminateAccount);
 
 // routes for verification and payment
 router.route('/verify-email').post(protect,verifyEmail);
