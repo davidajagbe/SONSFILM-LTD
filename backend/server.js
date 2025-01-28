@@ -23,9 +23,19 @@ App.use(cookieParser());
 App.use('/api/users', UserRoutes)
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 App.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-App.get('/', (req, res)=>{
-    res.send('Server is Running')
-})
+
+if (process.env.NODE_ENV === 'production') {
+    const __dirname = path.resolve();
+    App.use(express.static(path.join(__dirname, '/frontend/dist')));
+
+    App.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html')));
+    
+} else {
+    App.get('/', (req, res)=>{
+        res.send("Server is Running")
+    })
+}
+
 
 App.use(NotFound);
 App.use(ErrorHandler);
