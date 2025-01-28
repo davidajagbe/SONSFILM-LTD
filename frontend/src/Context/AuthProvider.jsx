@@ -58,13 +58,13 @@ export const AuthProvider = ({ children }) => {
 
   const terminateAccount = async () => {
     try {
-      await axios.delete('/api/users/profile'); // Call the API to delete the user account
+      await axios.delete('/api/users/terminate'); // Call the API to delete the user account
       logout(); 
       // Optionally, redirect the user to a specific page after termination
       // window.location.href = '/signup'; 
     } catch (error) {
       console.error('Error terminating account:', error);
-      setError('Error terminating account:', error);
+      setError('Failed to terminate account');
       // Handle termination error (e.g., display an error message)
     }
   };

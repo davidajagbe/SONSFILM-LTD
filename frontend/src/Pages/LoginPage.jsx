@@ -23,7 +23,7 @@ const LoginPage = () => {
 
         // Basic validation for identifier (email or phone)
         if (!identifier || !password) {
-            toast.error("Please fill in all fields.");
+            toast.error ("Please fill in all fields.");
             return;
         }
         
@@ -32,7 +32,7 @@ const LoginPage = () => {
             await login({ email: identifier, phone: identifier, password }); // Send "identifier" as email/phone
             navigate('/profile');
         } catch (error) {
-            console.error(error);
+            toast.error(error);
         } finally {
             setLoading(false);
         }

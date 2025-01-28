@@ -64,7 +64,7 @@ const UpdateProfile = () => {
       const { data } = await axios.put('/api/users/profile', formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer ${localStorage.getItem('token')}`, // Add token if required
+          // Authorization: `Bearer ${localStorage.getItem('token')}`, // Add token if required
         },
       });
       if (data.success) {

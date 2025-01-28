@@ -5,9 +5,7 @@ import '../styles/Profile.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Edit } from '@mui/icons-material'; // Import icons from Material UI 
-
-// import { FaUserCircle } from 'react-icons/fa';
+import EditIcon from '@mui/icons-material/Edit'; // Import icons from Material UI 
 // import Advert from '../Components/Advert';
 import profilePicc from '/Users/DELL/Documents/MERNSTACK (2)/MERNSTACK/backend/uploads/1735567987649-sunny_empire_image-removebg-preview.png';
 import TerminateButton from '../Components/TerminateButton';
@@ -91,10 +89,10 @@ function Profile() {
   const handleTerminateAccount = async () => {
     if (window.confirm('Are you sure you want to terminate your account? This action cannot be undone.')) {
       try {
-        await axios.delete('/api/users/profile'); // Send DELETE request to terminate endpoint
+        await axios.delete('/api/users/terminate'); // Send DELETE request to terminate endpoint
         toast.success('Account terminated successfully');
         // Redirect the user to the logout page or homepage
-        navigate('/logout');
+        navigate('/signup');
       } catch (error) {
         console.error('Error terminating account:', error);
         toast.error('Failed to terminate account');
@@ -142,7 +140,8 @@ function Profile() {
             <h1>{user?.name || "User's"} Dashboard</h1>
             <div className="header-buttons"> 
               <Link to="/editprofile" className="edit-profile-btn">
-                <Edit size={24} /> Edit Profile
+                <EditIcon size={24} /> 
+                Edit Profile
               </Link>
               <TerminateButton onTerminate={handleTerminateAccount} /> 
             </div>

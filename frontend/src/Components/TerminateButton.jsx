@@ -1,5 +1,5 @@
 //TerminateButton component
-import { DeleteForeverOutlined } from '@mui/icons-material';
+import DeleteIcon from '@mui/icons-material/Delete';
 // Import icons from Material UI
 import '../styles/TerminateButton.css';
 
@@ -10,7 +10,7 @@ const TerminateButton = ({ onTerminate }) => {
       onClick={onTerminate} 
       title="Terminate Account"
     >
-      <DeleteForeverOutlined size={24} /> 
+      <DeleteIcon size={24} /> 
       Terminate Account
     </button>
   );
