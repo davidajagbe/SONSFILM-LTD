@@ -16,7 +16,7 @@ App.use(express.json());
 App.use(express.urlencoded({extended:true}));
 
 // Place cors middleware before route handlers
-App.use(cors({ origin: 'http://localhost:8080', credentials: true }));
+App.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 
 App.use(cookieParser());
 
