@@ -3,9 +3,11 @@ import axios from 'axios';
 import { AuthContext } from './AuthContext.jsx';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import dotenv from 'dotenv';
+dotenv.config();
 
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = 'http://localhost:8000'; // Ensure this points to your backend
+axios.defaults.baseURL = import.meta.env.VITE_BACKEND_BASEURL; // Ensure this points to your backend
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
