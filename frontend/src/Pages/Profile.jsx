@@ -6,8 +6,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import EditIcon from '@mui/icons-material/Edit'; // Import icons from Material UI 
+import { AccountCircle } from '@mui/icons-material/AccountCircle';
 // import Advert from '../Components/Advert';
-import profilePicc from '/Users/DELL/Documents/MERNSTACK (2)/MERNSTACK/backend/uploads/1735567987649-sunny_empire_image-removebg-preview.png';
 import TerminateButton from '../Components/TerminateButton';
 
 function Profile() {
@@ -112,7 +112,7 @@ function Profile() {
             <>
               <h2>Profile</h2>
               <div className="profile-info">
-                <img src={user.profilePic || profilePicc} alt="Profile" />
+                {<img src={user.profilePic} alt="Profile" /> || <AccountCircle size={48} />}
                 <h3>{user.name}</h3>
                 <p>{user.title || 'Entertainment Professional'}</p>
               </div>
