@@ -33,6 +33,8 @@ if (process.env.NODE_ENV === 'production') {
 } else {
     App.get('/', (req, res)=>{
         res.send("Server is Running")
+        res.json("Server is Running")
+
     })
 }
 
