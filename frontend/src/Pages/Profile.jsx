@@ -6,7 +6,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import EditIcon from '@mui/icons-material/Edit'; // Import icons from Material UI 
-import { AccountCircle } from '@mui/icons-material/AccountCircle';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 // import Advert from '../Components/Advert';
 import TerminateButton from '../Components/TerminateButton';
 
