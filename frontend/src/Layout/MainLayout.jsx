@@ -3,8 +3,8 @@ import { useContext, useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { AuthContext } from '../Context/AuthContext';
 import Navbar from '../Components/Navbar';
-import Footer from '../components/Footer';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from '../Components/Footer';
 import '../styles/MainLayout.css';
 
 const MainLayout = () => {
