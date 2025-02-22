@@ -1,11 +1,12 @@
 import { Outlet } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState,lazy, Suspense } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { AuthContext } from '../Context/AuthContext';
-import Navbar from '../Components/Navbar';
 import 'react-toastify/dist/ReactToastify.css';
-import Footer from '../Components/Footer';
 import '../styles/MainLayout.css';
+
+const Navbar = lazy(() => import('../Components/Navbar')); // Dynamic import
+const Footer = lazy(() => import('../Components/Footer')); // Dynamic import
 
 const MainLayout = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,11 +54,15 @@ const MainLayout = () => {
 
   return (
     <>
-      <Navbar toggleMenu={toggleMenu} menuOpen={menuOpen} />
+      <Suspense fallback={<div>Loading Navbar...</div>}>
+        <Navbar toggleMenu={toggleMenu} menuOpen={menuOpen} />
+      </Suspense>
       <main className='container' style={{ minHeight: '80vh' }}>
         <Outlet />
       </main>
-      <Footer />
+      <Suspense fallback={<div>Loading Footer...</div>}>
+        <Footer toggleMenu={toggleMenu} menuOpen={menuOpen} />
+      </Suspense>
       <ToastContainer position="bottom-right" autoClose={5000} pauseOnHover />
     </>
   );

@@ -34,7 +34,6 @@ if (process.env.NODE_ENV === 'production') {
     App.get('/', (req, res)=>{
         res.send("Server is Running")
         res.json("Server is Running")
-
     })
 }
 
