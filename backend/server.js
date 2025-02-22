@@ -32,8 +32,8 @@ if (process.env.NODE_ENV === 'production') {
     
 } else {
     App.get('/', (req, res)=>{
-        res.send("Server is Running")
-        res.json("Server is Running")
+        console.log('Test route hit!');
+        res.send('Hello from the test route!');
     })
 }
 
