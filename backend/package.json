@@ -1,13 +1,13 @@
 {
-  "name": "mernstack",
+  "name": "sonsfilm",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
+    "start": "node server.js",
+    "server": "nodemon server.js",
     "client": "npm run dev --prefix frontend",
-    "dev": "concurrently \"yarn server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "david Aj",
   "license": "ISC",
