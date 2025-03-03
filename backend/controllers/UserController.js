@@ -509,8 +509,8 @@ const authUser = AsyncHandler(async (req, res) => {
         return res.status(404).json({ message: 'User not found' });
       }
 
-      // Perform account termination logic (e.g., delete user data, revoke access, etc.)
-      await User.findByIdAndDelete(req.user._id); // Delete the user's account
+      // Perform account termination logic (e.g., delete user data, revoke access)
+      await User.findByIdAndDelete(user); // Delete the user's account
 
       res.status(200).json({ message: 'Account terminated successfully' });
     } catch (error) {

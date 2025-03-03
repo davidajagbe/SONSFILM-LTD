@@ -151,7 +151,7 @@ const SignupPage = () => {
                     rows="3"
                     required
                     placeholder="Enter your Address"
-                    value={userInfo.occupation}
+                    value={userInfo.address}
                     onChange={handleChange}
                     ></textarea>
 
