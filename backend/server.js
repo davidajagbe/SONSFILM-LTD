@@ -20,7 +20,7 @@ App.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 
 App.use(cookieParser());
 
-App.use('/api/users', UserRoutes)
+// App.use('/api/users', UserRoutes)
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 App.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
