@@ -31,15 +31,12 @@ if (process.env.NODE_ENV === 'production') {
   App.use(express.static(path.join(__dirname, '/frontend/dist')));
 
   App.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html')));
-} else{
-    App.get('/', (req, res) => { // Change from /test back to /
-        console.log('Server is running in development mode!');
-        res.send('Server is running in development mode!');
-    }); 
+} else {
+  App.get('/', (req, res) => { // Change from /test back to /
+    console.log('Server is running in development mode!');
+    res.send('Server is running in development mode!');
+  });
 }
-
-
-
 
 App.use(NotFound);
 App.use(ErrorHandler);
