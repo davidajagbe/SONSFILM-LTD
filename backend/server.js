@@ -26,6 +26,8 @@ App.use('/api/users', UserRoutes); // Re-enable UserRoutes
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 App.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+App.get('/', (req,res) => res.send(`Server is ready`))
+
 App.use(NotFound);
 App.use(ErrorHandler);
 
