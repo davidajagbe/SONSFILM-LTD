@@ -7,15 +7,17 @@ const CookieToken = (res, userId) => {
     {
     expiresIn: '30d',
     }
-    );
+  );
 
-    res.cookie('jwt', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV !== 'development',//will use secure cookies in production
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 1 week
-      sameSite: 'strict',//prevents CRF attacks
-    });
-    
+  res.cookie('jwt', token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV !== 'development',//will use secure cookies in production
+    maxAge: 7 * 24 * 60 * 60 * 1000, // 1 week
+    sameSite: 'strict',//prevents CRF attacks
+  });
+  
+  console.log("Cookie Token Generated: ", token);
+  console.log("Cookie Set: ", res.getHeaders());
 };
 
 export default CookieToken;
