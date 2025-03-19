@@ -90,7 +90,6 @@ export const AuthProvider = ({ children }) => {
         {
           headers: {
             'Content-Type': 'multipart/form-data',
-            Authorization: `Bearer ${localStorage.getItem('token')}`, // Add token if required
           },
         }
       );
