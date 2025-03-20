@@ -5,6 +5,9 @@ import Spinner from '../Components/Spinners';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import '../styles/Login.css';
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
 
 const LoginPage = () => {
     const { login } = useContext(AuthContext);
@@ -29,7 +32,7 @@ const LoginPage = () => {
         
         setLoading(true);
         try {
-            await login({ email: identifier, phone: identifier, password }); // Send "identifier" as email/phone
+            await login({ email: identifier, phone: identifier, password },{withCredentials:true}); // Send "identifier" as email/phone
             navigate('/profile');
         } catch (error) {
             toast.error(error);

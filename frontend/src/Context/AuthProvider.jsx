@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (credentials) => {
     try {
-      const { data } = await axios.post('/api/users/login', credentials);
+      const { data } = await axios.post('/api/users/login', credentials,{withCredentials:true})//add with credentials true
       setUser(data || {}); // Ensure data is valid
       setError(null);
       setSuccess('Logged in successfully!');
@@ -178,7 +178,7 @@ export const AuthProvider = ({ children }) => {
 
 const handleWelfareForm = async (formData) => {
     try {
-      const { data } = await axios.post('/api/users/welfareform', formData);
+      const { data } = await axios.post('/api/users/welfareform', formData,{withCredentials:true});
       setSuccess(data.message || 'Form submitted successfully!');
       setError(null);
     } catch (err) {

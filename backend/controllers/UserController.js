@@ -254,25 +254,25 @@ const activateProfile = AsyncHandler(async (req, res) => {
 //              POST api/users/auth
 // @access      public
 
-const authUser = AsyncHandler(async (req, res) => {
-    const { email,phone, password } = req.body;
-    const user = await User.findOne({$or: [{email},{phone}]});
-    const userPhone = await User.findOne({ phone });
-    if (user || userPhone && (await user.matchPassword(password))) {
-      CookieToken(res, user._id);
-  
-      res.json({
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        phone: user.phone,
-        status: user.status,
-      });
-    } else {
-      res.status(401);
-      throw new Error('Invalid email or password');
-    }
-  });
+  const authUser = AsyncHandler(async (req, res) => {
+      const { email,phone, password } = req.body;
+      const user = await User.findOne({$or: [{email},{phone}]});
+      const userPhone = await User.findOne({ phone });
+      if (user || userPhone && (await user.matchPassword(password))) {
+        CookieToken(res, user._id);
+    
+        res.json({
+          _id: user._id,
+          name: user.name,
+          email: user.email,
+          phone: user.phone,
+          status: user.status,
+        });
+      } else {
+        res.status(401);
+        throw new Error('Invalid email or password');
+      }
+    });
   
   // @desc    Register a new user
   // @route   POST /api/users
