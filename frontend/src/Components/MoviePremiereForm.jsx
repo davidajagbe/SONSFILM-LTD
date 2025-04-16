@@ -1,5 +1,5 @@
+
 import { useState } from 'react';
-import '../styles/MoviePremiereForm.css';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -46,99 +46,128 @@ const MoviePremiereForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const { data } = await axios.post('/api/users/moviePremiereForm', formData);
-          toast.success(data.message ||'Form submitted successfully!');
-          navigate('/profile');
+            const { data } = await axios.post('/api/users/moviePremiereForm', formData);
+            toast.success(data.message || 'Form submitted successfully!');
+            navigate('/profile');
         } catch (error) {
-          toast.error(error.response?.data?.message ||'Error submitting form');
-        }
-        finally{
-            setIsSubmitting(true)
+            toast.error(error.response?.data?.message || 'Error submitting form');
+        } finally {
+            setIsSubmitting(true);
         }
     };
-    
 
     return (
-        <div className="form-page">
-            <div className="premiere-form-container">
-                <h2>Movie Premiere Registration</h2>
+        <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Movie Premiere Registration</h2>
                 
-                <form onSubmit={handleSubmit}>
-                    {/* Attendee Information */}
-                    <label htmlFor="name">Full Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
+                <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                            Full Name
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+                        />
+                    </div>
 
-                    <label htmlFor="email">Email Address</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
+                    <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                            Email Address
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+                        />
+                    </div>
 
-                    <label htmlFor="contact">Contact Number</label>
-                    <input
-                        type="tel"
-                        id="contact"
-                        name="contact"
-                        value={formData.contact}
-                        onChange={handleChange}
-                        required
-                    />
+                    <div>
+                        <label htmlFor="contact" className="block text-sm font-medium text-gray-700">
+                            Contact Number
+                        </label>
+                        <input
+                            type="tel"
+                            id="contact"
+                            name="contact"
+                            value={formData.contact}
+                            onChange={handleChange}
+                            required
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+                        />
+                    </div>
 
-                    {/* Premiere Details */}
-                    <label htmlFor="movie">Select Movie</label>
-                    <select
-                        id="movie"
-                        name="movie"
-                        value={formData.movie}
-                        onChange={handleChange}
-                        required
+                    <div>
+                        <label htmlFor="movie" className="block text-sm font-medium text-gray-700">
+                            Select Movie
+                        </label>
+                        <select
+                            id="movie"
+                            name="movie"
+                            value={formData.movie}
+                            onChange={handleChange}
+                            required
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+                        >
+                            <option value="">Choose a movie</option>
+                            {movies.map((movie, index) => (
+                                <option key={index} value={movie}>
+                                    {movie}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div>
+                        <label htmlFor="showtime" className="block text-sm font-medium text-gray-700">
+                            Preferred Showtime
+                        </label>
+                        <select
+                            id="showtime"
+                            name="showtime"
+                            value={formData.showtime}
+                            onChange={handleChange}
+                            required
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+                        >
+                            <option value="">Select showtime</option>
+                            <option value="5pm">5:00 PM</option>
+                            <option value="7pm">7:00 PM</option>
+                            <option value="9pm">9:00 PM</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label htmlFor="requests" className="block text-sm font-medium text-gray-700">
+                            Special Requests
+                        </label>
+                        <textarea
+                            id="requests"
+                            name="requests"
+                            rows="4"
+                            value={formData.requests}
+                            onChange={handleChange}
+                            placeholder="Any special requests or accessibility needs..."
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+                        ></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        <option value="">Choose a movie</option>
-                        {movies.map((movie, index) => (
-                            <option key={index} value={movie}>
-                                {movie}
-                            </option>
-                        ))}
-                    </select>
-
-                    <label htmlFor="showtime">Preferred Showtime</label>
-                    <select
-                        id="showtime"
-                        name="showtime"
-                        value={formData.showtime}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="">Select showtime</option>
-                        <option value="5pm">5:00 PM</option>
-                        <option value="7pm">7:00 PM</option>
-                        <option value="9pm">9:00 PM</option>
-                    </select>
-
-                    {/* Additional Information */}
-                    <label htmlFor="requests">Special Requests</label>
-                    <textarea
-                        id="requests"
-                        name="requests"
-                        rows="4"
-                        value={formData.requests}
-                        onChange={handleChange}
-                        placeholder="Any special requests or accessibility needs..."
-                    ></textarea>
-
-                    <button type="submit" disabled={isSubmitting}>
-                        {isSubmitting ? 'Submitting...' : 'Submit Request'} 
+                        {isSubmitting ? 'Submitting...' : 'Submit Request'}
                     </button>
                 </form>
             </div>
