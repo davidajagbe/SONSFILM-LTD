@@ -1,10 +1,15 @@
-// Advert.jsx
-import '../styles/Advert.css'; // Import your CSS file for styling
+import React from 'react';
 
 const Advert = ({ imageUrl, linkUrl, altText }) => {
     return (
         <a href={linkUrl} target="_blank" rel="noopener noreferrer">
-            <img src={imageUrl} alt={altText} className="advert-image" />
+            <div className="flex justify-center items-center my-5">
+                <img 
+                    src={imageUrl} 
+                    alt={altText} 
+                    className="w-full max-w-[728px] h-auto"
+                />
+            </div>
         </a>
     );
 };
