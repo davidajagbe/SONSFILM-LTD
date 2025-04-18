@@ -18,8 +18,4 @@ mode = "parallel"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd frontend && npm run dev"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd backend && npm run dev"
+args = "concurrently \"cd frontend && npm run dev\" \"cd backend && npm run dev\""
