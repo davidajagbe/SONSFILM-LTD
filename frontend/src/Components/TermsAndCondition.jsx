@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 const TermsAndConditions = () => {
   const navigate = useNavigate();
   return (
-    <div style={{ padding: "20px", lineHeight: "1.6",alignItems: "center", textAlign: "left",paddingInline: "-20px"}}>
+    <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8 prose prose-lg">
       <h1>Artist Membership Terms and Conditions</h1>
       <ol>
         <li>Registering with the sum of Sixty thousand five hundred naira (#60,500).</li>

@@ -9,9 +9,11 @@ const NotificationPage = () => {
   // ];
 
   return (
-    <div className="notification-page">
-      <h2>Notifications</h2>
-      <p>no Notifications right now.</p>
+    <div className="min-h-screen bg-gray-50 p-8">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Notifications</h2>
+        <p className="text-gray-600">No notifications right now.</p>
+      </div>
     </div>
   );
 };

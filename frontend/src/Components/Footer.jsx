@@ -30,10 +30,11 @@ const Footer = () => {
   };
   return (
     <>
-      <footer className='footer'>
-        <div className='contact-form'>
-          <h3>Contact Us</h3>
-          <form onSubmit={handleSubmit}>
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold mb-4">Contact Us</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"
               name="firstName" // Add name attribute

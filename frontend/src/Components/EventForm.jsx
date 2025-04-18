@@ -84,10 +84,10 @@ const EventForm = () => {
   };
 
     return (
-        <div className="form-page">
-            <div className="form-container">
-                <h2>Event Form</h2>
-                <form onSubmit={handleSubmit}>
+        <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Event Form</h2>
+                <form onSubmit={handleSubmit} className="space-y-6">
                     <label htmlFor='surname'>Surname:</label>
                     <input 
                         type="text" 
@@ -95,6 +95,7 @@ const EventForm = () => {
                         value={formData.surname} 
                         onChange={handleInputChange} 
                         required
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
                     />
                     <label htmlFor='firstName'>First Name:</label>
                     <input 

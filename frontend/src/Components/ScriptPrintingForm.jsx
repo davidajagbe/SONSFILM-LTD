@@ -39,10 +39,10 @@ const ScriptPrintingForm = () => {
     };
 
     return (
-        <div className="form-page">
-            <div className="form-container">
-                <h3>Script Printing Request Form</h3>
-                <form onSubmit={handleSubmit}>
+        <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                <h3 className="text-2xl font-bold text-center text-gray-900 mb-6">Script Printing Request Form</h3>
+                <form onSubmit={handleSubmit} className="space-y-6">
                     <label htmlFor="name">Full Name</label>
                     <input
                         type="text"
