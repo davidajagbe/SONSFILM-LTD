@@ -1,74 +1,36 @@
-
-import { useState } from 'react';
-import { toast } from 'react-toastify';
+import React from 'react';
 
 const AdminDashboard = () => {
-    const [ads, setAds] = useState([
-        { id: 1, title: 'Ad 1', startDate: '', endDate: '', frequency: 'always', preview: 'Preview of Ad 1' },
-        { id: 2, title: 'Ad 2', startDate: '', endDate: '', frequency: 'randomly', preview: 'Preview of Ad 2' },
-        // Add more ads as needed
-    ]);
-    const [selectedAd, setSelectedAd] = useState(null);
-
-    const handleAdSelection = (event) => {
-        const adId = parseInt(event.target.value);
-        const ad = ads.find(ad => ad.id === adId);
-        setSelectedAd(ad);
-    };
-
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setSelectedAd({ ...selectedAd, [name]: value });
-    };
-
-    const handleSaveChanges = () => {
-        try {
-            setAds(ads.map(ad => (ad.id === selectedAd.id ? selectedAd : ad)));
-            toast.success('Changes saved successfully!');
-        } catch (error) {
-            toast.error(error || 'Please try again')
-        }
-    };
-
-    return (
-        <div>
-            <h1>Admin Dashboard</h1>
-            <div>
-                <label>Select Ad:</label>
-                <select onChange={handleAdSelection}>
-                    <option value="">Select an ad</option>
-                    {ads.map(ad => (
-                        <option key={ad.id} value={ad.id}>{ad.title}</option>
-                    ))}
-                </select>
-            </div>
-            {selectedAd && (
-                <div>
-                    <h2>Ad Settings</h2>
-                    <div>
-                        <label>Start Date:</label>
-                        <input type="date" name="startDate" value={selectedAd.startDate} onChange={handleInputChange} />
-                    </div>
-                    <div>
-                        <label>End Date:</label>
-                        <input type="date" name="endDate" value={selectedAd.endDate} onChange={handleInputChange} />
-                    </div>
-                    <div>
-                        <label>Display Frequency:</label>
-                        <select name="frequency" value={selectedAd.frequency} onChange={handleInputChange}>
-                            <option value="always">Always</option>
-                            <option value="randomly">Randomly</option>
-                        </select>
-                    </div>
-                    <div>
-                        <h3>Preview</h3>
-                        <p>{selectedAd.preview}</p>
-                    </div>
-                    <button onClick={handleSaveChanges}>Save Changes</button>
-                </div>
-            )}
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+          Admin Dashboard
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Dashboard cards */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              Users
+            </h2>
+            {/* Add user management content */}
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              Events
+            </h2>
+            {/* Add event management content */}
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              Forms
+            </h2>
+            {/* Add form management content */}
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default AdminDashboard;

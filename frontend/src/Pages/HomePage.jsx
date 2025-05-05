@@ -1,17 +1,14 @@
+import React from 'react';
 import Hero from '../Components/Hero';
+import Advert from '../Components/Advert';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import adminProfile from '../assets/adminprofile.jpg';
-import '../styles/HomePage.css';
-import Advert from '../Components/Advert'; // Import the Advert component
-import axios from 'axios'; // Import axios
-// import { AuthContext } from '../Context/AuthContext';
+import axios from 'axios';
 
 const HomePage = () => {
 
-  const [visibleAnswers, setVisibleAnswers] = useState({}); // Track visibility for each FAQ item by index
-
-  // Toggle function to show/hide answers for each FAQ item
+  const [visibleAnswers, setVisibleAnswers] = useState({}); 
   const toggleAnswer = (index) => {
     setVisibleAnswers((prevState) => ({
       ...prevState,
@@ -42,7 +39,7 @@ const HomePage = () => {
     }
   ];
 
-  const [ads, setAds] = useState([]);// State variable to store ads
+  const [ads, setAds] = useState([]);
 
   useEffect(() => {
     const fetchAds = async () => {
@@ -50,7 +47,6 @@ const HomePage = () => {
         const response = await axios.get('/api/users/profile');
         const user = response.data;
         if (user && user.ad && user.ad.imageUrl) {
-          // Construct the correct image URL here
           const imageUrl = `${window.location.origin}${user.ad.imageUrl}`; 
           setAds([{
             imageUrl: imageUrl, 
@@ -61,81 +57,77 @@ const HomePage = () => {
       } catch (error) {
         console.error('Error fetching ads:', error);
       }
-  };
-
-  fetchAds();
-  }, []); // Fetch ads when the component mounts
+    };
+    fetchAds();
+  }, []); 
 
   return (
-    <>  
-      <Hero/>
-      <section className="about-us-section">
-        <div className="about-us-container">
-          {/* Image Section */}
-          <div className="about-image" id='img'>
-            <img src={adminProfile} alt="About Us" />
-          </div>
-
-          {/* Text Section */}
-          <div className="about-text">
-            <h2>We are an umbrella binding ACTORS and CREWS.</h2>
-            <h3>The objective for which the company is established are</h3>
-          </div>
-
-          {/* Cards Section */}
-          <div className="about-cards">
-            <div className="about-card">
-              <h3>To carry on business as film producers</h3>
-              <p>To carry on business as film directors, script writers, script developers, film editors, film making personnel of all description. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, possimus!</p>
-              <Link to="/signup" className="about-card-link">Sign Up &gt;</Link>
+    <div className="min-h-screen bg-gray-50">
+      <Hero />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <section className="about-us-section">
+          <div className="about-us-container grid grid-cols-1 md:grid-cols-2 gap-8"> {/* Added grid for responsiveness */}
+            <div className="about-image" id='img'>
+              <img src={adminProfile} alt="About Us" />
             </div>
-            <div className="about-card">
-              <h3>To make, shoot, direct, record, produce and supply films</h3>
-              <p>To build, acquire, equip, establish, maintain, manage and run film studios and any premises required or useful for shooting or making films. Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-              <Link to="/signup" className="about-card-link">Sign Up &gt;</Link>
-            </div>
-            <div className="about-card">
-              <h3>To provide all services required for the marketing of films</h3>
-              <p>To enter into contract for and to engage the services of actors, actresses, singers, dancers, comedians, entertainers. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, aspernatur.</p>
-              <Link to="/signup" className="about-card-link">Explore &gt;</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <h2>Advertisements</h2>
-      <div className="ads-section">
-        {ads.map((ad, index) => (
-          <Advert key={index} imageUrl={ad.imageUrl} linkUrl={ad.linkUrl} altText={ad.altText} />
-        ))}
-      </div>
-      
-      {/* FAQ Section */}
-      <section id="faq">
-        <h2 className='h2'>Frequently Asked Questions</h2>
-        <div className="faq-container">
-          {faqData.map((faq, index) => (
-            <div key={index} className="faq">
-              <div 
-                className="faq-question" 
-                onClick={() => toggleAnswer(index)}
-              >
-                {faq.question}
-                <span className={`arrow ${visibleAnswers[index] ? 'up' : ''}`}>&gt;</span>
-              </div>
-              {visibleAnswers[index] && (
-                <div className="faq-answer">
-                  {faq.answer}
+            <div className="about-text">
+              <h2>We are an umbrella binding ACTORS and CREWS.</h2>
+              <h3>The objective for which the company is established are</h3>
+              <div className="about-cards grid grid-cols-1 md:grid-cols-3 gap-8"> {/* Added grid for responsiveness */}
+                <div className="about-card p-6 bg-white rounded-lg shadow-md"> {/* Added Tailwind classes */}
+                  <h3>To carry on business as film producers</h3>
+                  <p>To carry on business as film directors, script writers, script developers, film editors, film making personnel of all description. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, possimus!</p>
+                  <Link to="/signup" className="text-blue-500 hover:underline">Sign Up &gt;</Link>
                 </div>
-              )}
+                <div className="about-card p-6 bg-white rounded-lg shadow-md">
+                  <h3>To make, shoot, direct, record, produce and supply films</h3>
+                  <p>To build, acquire, equip, establish, maintain, manage and run film studios and any premises required or useful for shooting or making films. Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                  <Link to="/signup" className="text-blue-500 hover:underline">Sign Up &gt;</Link>
+                </div>
+                <div className="about-card p-6 bg-white rounded-lg shadow-md">
+                  <h3>To provide all services required for the marketing of films</h3>
+                  <p>To enter into contract for and to engage the services of actors, actresses, singers, dancers, comedians, entertainers. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, aspernatur.</p>
+                  <Link to="/signup" className="text-blue-500 hover:underline">Explore &gt;</Link>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
+        </section>
+        <Advert /> {/* Moved Advert below About Us */}
+        <div className="mt-12">
+          <h2>Advertisements</h2>
+          <div className="ads-section">
+            {ads.map((ad, index) => (
+              <Advert key={index} imageUrl={ad.imageUrl} linkUrl={ad.linkUrl} altText={ad.altText} />
+            ))}
+          </div>
+
+          {/* FAQ Section */}
+          <section id="faq" className="mt-12">
+            <h2 className='h2'>Frequently Asked Questions</h2>
+            <div className="faq-container">
+              {faqData.map((faq, index) => (
+                <div key={index} className="faq border-b border-gray-200 py-4"> {/* Added Tailwind classes */}
+                  <div 
+                    className="faq-question cursor-pointer" 
+                    onClick={() => toggleAnswer(index)}
+                  >
+                    {faq.question}
+                    <span className={`arrow ${visibleAnswers[index] ? 'up' : ''}`}>&gt;</span>
+                  </div>
+                  {visibleAnswers[index] && (
+                    <div className="faq-answer mt-2"> {/* Added margin */}
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 };
 
 export default HomePage;
-
-

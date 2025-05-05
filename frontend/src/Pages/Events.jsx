@@ -1,61 +1,30 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-// Swiper styles
-import 'swiper/swiper-bundle.css';
-import 'swiper/css';
-import {Autoplay, Navigation} from 'swiper/modules';
-import '../styles/Events.css';
-import img1 from '../assets/musicians-blending-tracks-club-stage.jpg';
-import img2 from '../assets/84179.jpg';
-import img3 from '../assets/85805.jpg';
-import img4 from '../assets/IMG-20241022-WA0001.jpg';
-import img5 from '../assets/IMG-20241022-WA0002.jpg';
-import img6 from '../assets/IMG-20241022-WA0003.jpg';
-import { useContext } from 'react';
-import { AuthContext } from '../Context/AuthContext';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 const Events = () => {
-  const {user} = useContext(AuthContext)
-  const images = [img1,img2,img3,img4,img5,img6];// Add more image URLs as needed
-
   return (
-    <div className="event-section">
-      <section className='event'>
-        <div className="event-container">
-          <h2>Events</h2>
-          {user?.events?.map((event,index) =>(<li key={index}>{event.name} - {event.image} - {event.description}</li>)) 
-          || 
-          (<>
-            <p style={{margin: '30px'}}>No events at the moment. Please fill out form below</p>
-            <Link to="/eventform" className="eventform-link">Event Form</Link>
-          </>)
-          }
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl font-bold text-center text-gray-900 mb-8">
+          Upcoming Events
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Event cards can be added here */}
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="p-6">
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">
+                Event Title
+              </h2>
+              <p className="text-gray-600 mb-4">
+                Event description goes here...
+              </p>
+              <button className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 transition-all">
+                Learn More
+              </button>
+            </div>
+          </div>
         </div>
-      </section>
-      <section className='gallery' style={{marginTop: '100px'}}>
-        <h2>Gallery</h2>
-        <div className="gallery-container">
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          spaceBetween={10}
-          slidesPerView={4}
-          loop={true}
-          navigation={true} // Adds arrows
-          autoplay={{
-            delay: 2000, // 2000ms (2 seconds) for auto transition
-            disableOnInteraction: false, // Keeps autoplay active even if the user interacts with the slider.
-          }}
-        >
-          {images.map((img, index) => (
-            <SwiperSlide key={index}>
-              <img src={img} alt={`Slide ${index + 1}`} className="gallery-image" />
-            </SwiperSlide>
-          ))}
-        </Swiper>
       </div>
-      </section>
     </div>
-    
   );
 };
 

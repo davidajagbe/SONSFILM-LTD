@@ -1,220 +1,132 @@
-import { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../Context/AuthContext';
-import adminProfile from '../assets/adminprofile.jpg';
-import Spinner from '../Components/Spinners';
+import axios from 'axios';
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import '../styles/SignupForm.css';
+import Spinner from '../Components/Spinners';
 
 const SignupPage = () => {
-    const { signup } = useContext(AuthContext);
-    const [loading, setLoading] = useState(false);
-    const [userInfo, setUserInfo] = useState({
-        email: '',
-        phone: '',
-        name: '',
-        dob: '',
-        maritalStatus: '',
-        countryOfOrigin: '',
-        stateOfOrigin: '',
-        industry: '',
-        occupation: '',
-        address: '',
-        password: '',
-        confirmPassword: '',
-    });
-    const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    password: ''
+  });
+  const navigate = useNavigate();
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setUserInfo((prev) => ({ ...prev, [name]: value }));
-    };
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        try {
-            await signup(userInfo);
-            navigate('/profile');  // Redirect after successful signup
-        } catch (error) {
-            console.error("Signup failed:", error);
-            toast.error(error.response?.data?.message||"Signup failed. Please check your information and try again.");
-        }
-        finally {
-            setLoading(false);
-        }
-        if(userInfo.password !== userInfo.confirmPassword){
-            toast.error(`Passwords do not match`)
-        }
-    };
-    
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await axios.post('/api/signup', formData);
+      toast.success('Signup successful!');
+      navigate('/login');
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'Signup failed');
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    return (
-        <div className="signup-container">
-            <div className="signup-form-section">
-                <h1>Sign Up</h1>
-                <p>Join our vibrant community today!</p>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="email">Email</label>
-                    <input type="email" 
-                    id="email" 
-                    name="email" 
-                    placeholder="Enter your email"
-                    value={userInfo.email}
-                    onChange={handleChange} 
-                    required />
-
-                    <label htmlFor="phone">Phone</label>
-                    <input type="tel" 
-                    id="phone" 
-                    name="phone" 
-                    placeholder="Enter your phone number" 
-                    value={userInfo.phone}
-                    onChange={handleChange}
-                    required
-                    />
-
-                    <label htmlFor="name">Name</label>
-                    <input type="text" 
-                    id="name" 
-                    name="name" 
-                    placeholder="Enter your name" 
-                    required 
-                    value={userInfo.name}
-                    onChange={handleChange}
-                    />
-
-                    <label htmlFor="dob">Date of Birth</label>
-                    <input type="date"
-                    id="dob"
-                    name="dob"
-                    placeholder="Enter your date of birth"
-                    value={userInfo.dob}
-                    onChange={handleChange}
-                    required
-                    />
-
-                    <label htmlFor="industry">Name of Industry</label>
-                    <input type="text" 
-                    id="industry" 
-                    name="industry" 
-                    placeholder="Enter your Industry Name" 
-                    required 
-                    value={userInfo.industry}
-                    onChange={handleChange}
-                    />
-
-                    <label htmlFor="countryOfOrigin">Country of origin</label>
-                    <input type="text" 
-                    id="countryOfOrigin" 
-                    name="countryOfOrigin" 
-                    placeholder="Enter your country of origin" 
-                    required 
-                    value={userInfo.countryOfOrigin}
-                    onChange={handleChange}
-                    />
-
-                    <label htmlFor="stateOfOrigin">State of origin</label>
-                    <input type="text" 
-                    id="stateOfOrigin" 
-                    name="stateOfOrigin" 
-                    placeholder="" 
-                    required 
-                    value={userInfo.stateOfOrigin}
-                    onChange={handleChange}
-                    />
-
-                    <label htmlFor="maritalStatus">Marital Status</label>
-                    <input type="text" 
-                    id="maritalStatus" 
-                    name="maritalStatus" 
-                    placeholder="Single or Married?" 
-                    required 
-                    value={userInfo.maritalStatus}
-                    onChange={handleChange}
-                    />
-
-                    <label htmlFor="occupation">Occupation</label>
-                    <input type="text" 
-                    id="occupation" 
-                    name="occupation" 
-                    placeholder="Enter your Occupation" 
-                    required 
-                    value={userInfo.occupation}
-                    onChange={handleChange}
-                    />
-
-                    <label htmlFor="address">Address</label>
-                    <textarea name="address" 
-                    id="address"
-                    rows="3"
-                    required
-                    placeholder="Enter your Address"
-                    value={userInfo.address}
-                    onChange={handleChange}
-                    ></textarea>
-
-                    <label htmlFor="password">Password</label>
-                    <input type="password" 
-                    id="password" 
-                    name="password" 
-                    placeholder="Enter your password"
-                    value={userInfo.password}
-                    onChange={handleChange}
-                    required />
-                    
-                    <label htmlFor="password">Confirm Password</label>
-                    <input type="password" 
-                    id="confirmPassword" 
-                    name="confirmPassword" 
-                    placeholder="Confirm entered password"
-                    value={userInfo.confirmPassword}
-                    onChange={handleChange} 
-                    required />
-
-                    <div className="signup-checkbox-group">
-                        <label htmlFor="agree-terms" >
-                            <input type="checkbox" name="agree-terms" required />
-                            <p></p>I agree to the <Link to="/terms-and-conditions" className="terms">privacy policy</Link> and terms.
-                        </label>
-                        <label htmlFor="consent-terms">
-                            <input type="checkbox" id="consent-terms" name="consent-terms" required />
-                            I consent to receive marketing emails.
-                        </label>
-                    </div>  
-                    {loading ? 
-                    (
-                        <Spinner loading={loading} />
-                    ) :
-                    (
-                        <button type="submit" 
-                        disabled={
-                            !userInfo.email || !userInfo.password || userInfo.password !== userInfo.confirmPassword
-                        }>
-                            Sign Up
-                        </button>
-                    )}
-                </form>
-                <p>
-                    Already have an account? <Link to='/login'>Log In</Link>
-                </p>
-            </div>
-            <div className="signup-intro-section">
-                {/* Company Intro Section */}
-                <div className="signup-intro-card">
-                    <img src={adminProfile} alt="Admin" className="admin-image" />
-                    <h2>Stars of Nigeria Films Entertainment Ltd</h2>
-                    <p>The Home of Movies, Modeling & Music.</p>
-                    <p>
-                        At Stars of Nigeria Films Entertainment Ltd, we&apos;re passionate about fostering creativity and talent in the entertainment industry. 
-                        We provide a platform for artists, actors, and models to connect, collaborate, and showcase their skills to the world.
-                    </p><br />
-                    <p>Join our vibrant community and let&apos;s create amazing stories together!</p>
-                </div>
-            </div>
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
+        <div>
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            Create your account
+          </h2>
         </div>
-    );
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <div className="space-y-4">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+              />
+            </div>
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                value={formData.phone}
+                onChange={handleChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                value={formData.password}
+                onChange={handleChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+              />
+            </div>
+          </div>
+
+          <div>
+            {loading ? (
+              <div className="flex justify-center">
+                <Spinner loading={loading} />
+              </div>
+            ) : (
+              <button
+                type="submit"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+              >
+                Sign Up
+              </button>
+            )}
+          </div>
+
+          <div className="text-center text-sm">
+            <p className="text-gray-600">
+              Already have an account?{' '}
+              <Link to="/login" className="font-medium text-primary hover:text-primary/80">
+                Login
+              </Link>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default SignupPage;
