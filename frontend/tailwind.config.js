@@ -13,6 +13,9 @@ export default {
         accent: '#FB8036',
         body: '#0C180C'
       },
+      ringColor: {
+        primary: '#52A350',
+      },
     },
   },
   plugins: [
