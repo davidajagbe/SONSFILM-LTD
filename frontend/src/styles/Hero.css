@@ -1,0 +1,75 @@
+/* Hero Components styling */
+
+body{
+    height: 100%;
+    background-color: #f5ffe9;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 80px 20px; /* Increased top padding for better spacing from navbar */
+    background-color: #f5ffe9;
+    position: relative;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+    color: #4d6041;
+}
+
+.hero-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4d6041;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    color: #4d6041;
+    margin: 10px 0;
+}
+
+.business-call {
+    margin: 20px 0;
+}
+
+/* Button styling */
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.explore-btn {
+    background-color: #91c083;
+    color: white;
+}
+
+.explore-btn:hover {
+    background-color: #7da46e;
+}
+
+.signup-btn {
+    background-color: white;
+    color: #4d6041;
+    border: 1px solid #4d6041;
+}
+
+.signup-btn:hover {
+    background-color: #4d6041;
+    color: white;
+}

@@ -1,0 +1,228 @@
+/* About us section */
+.about-us-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9; /* Light background */
+  }
+  
+.about-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.about-image{
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+  
+.about-text h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+  
+.about-text h3 {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+    font-weight: bolder;
+    justify-self: start;
+}
+  
+.about-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+  
+.about-card {
+    background-color: #c7e3ab; /* Light green background */
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    min-width: 250px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.about-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+  
+.about-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+  
+.about-card-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #5c5c5c;
+    font-weight: bold;
+    text-decoration: none;
+}
+  
+.about-card-link:hover {
+    color: #333;
+
+}  
+
+/* Services section styling */
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.service-card, .aboutus-block {
+    background-color: #c7e3ab   ; 
+    color: black; /* Text color for better contrast on green background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: left;
+    margin: 10px;
+}
+.service-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.service-card h3, .aboutus-block h3 {
+    color: black;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+
+/* Mission container styling */
+.aboutus-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+/* Pricing Section */
+#pricing {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+#pricing h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+#pricing p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pricing-plans {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Pricing Plan */
+.pricing-plan {
+  flex: 1;
+  max-width: 400px;
+  background-color: #d3e5b0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures button stays at the bottom */
+}
+
+.pricing-plan h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.plan-features {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.plan-features li::before {
+  content: '✔️';
+  color: #6b8e23;
+  margin-right: 8px;
+}
+
+/* Button Container */
+.button-container {
+  margin-top: auto; /* Ensures it stays at the bottom */
+}
+
+.get-started-btn {
+  background-color: #6b8e23;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.5s;
+}
+
+.get-started-btn:hover {
+  background-color: #556b2f;
+}
+
+@media (max-width: 768px) {
+  .pricing-container {
+    flex-direction: column;
+  }
+
+  .pricing-features, .pricing-plans {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-plan {
+    padding: 15px;
+  }
+
+  .pricing-plan h3, .price {
+    font-size: 1.2rem;
+  }
+}

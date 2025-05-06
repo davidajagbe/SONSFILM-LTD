@@ -1,0 +1,48 @@
+.membership-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.membership-form h2, .membership-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.membership-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.membership-form input[type="text"],
+.membership-form input[type="number"],
+.membership-form input[type="email"],
+.membership-form input[type="checkbox"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.howDidYouKnow-group {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    white-space: nowrap; 
+}
+
+.membership-form.terms-label {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+

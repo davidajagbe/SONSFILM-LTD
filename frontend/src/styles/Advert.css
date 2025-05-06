@@ -1,0 +1,9 @@
+/* Advert.css */
+.advert-image {
+    width: 728px; /* Leaderboard width */
+    height: 90px; /* Leaderboard height */
+    margin: 20px auto; /* Center the ad */
+    display: block; /* Prevent extra space below the image */
+    max-width: 100%; /* Make the image responsive */
+    height: auto;     /* Maintain aspect ratio */
+}

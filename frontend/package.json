@@ -2,6 +2,7 @@
   "name": "sonsfilm",
   "private": true,
   "version": "0.0.0",
+  "description": "## 📄 Project Description This is a membership 🌐 website designed to provide an engaging and interactive 🤝 platform for users. The website incorporates features such as 🔐 login authentication, ✉️ secure messaging, 🗂️ document encryption, 🗳️ voting, 📅 event posting, and 📖 booking. Users can also manage 💳 payments through Stripe.js, which supports both 🏦 bank card and transfer options.",
   "type": "module",
   "scripts": {
     "dev": "vite",
